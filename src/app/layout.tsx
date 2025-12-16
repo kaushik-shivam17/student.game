@@ -36,19 +36,21 @@ export default function RootLayout({
           strategy="afterInteractive"
           data-orchids-project-id="795fd314-64cd-40c3-a9bb-ad14e39c3346"
         />
-        <ErrorReporter />
-        <Script
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
-          strategy="afterInteractive"
-          data-target-origin="*"
-          data-message-type="ROUTE_CHANGE"
-          data-include-search-params="true"
-          data-only-in-iframe="true"
-          data-debug="true"
-          data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
-        />
-        {children}
-        <VisualEditsMessenger />
+          <ErrorReporter />
+          <Script
+            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
+            strategy="afterInteractive"
+            data-target-origin="*"
+            data-message-type="ROUTE_CHANGE"
+            data-include-search-params="true"
+            data-only-in-iframe="true"
+            data-debug="true"
+            data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
+          />
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+          <VisualEditsMessenger />
       </body>
     </html>
   );

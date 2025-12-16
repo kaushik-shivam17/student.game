@@ -5,7 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, ChevronDown } from "lucide-react";
 
+'use client'
+
+import { useAuth } from '@/contexts/auth-context'
+import Link from 'next/link'
+
 export default function Header() {
+  const { user, signOut } = useAuth()
   return (
     <header className="sticky top-0 left-0 md:left-2 right-0 z-40 bg-background transition-all duration-300">
       <div className="mx-auto px-2 lg:px-4">
